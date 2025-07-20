@@ -673,7 +673,7 @@ def main():
     current_page = st.session_state.current_page
 
     # MongoDB URI (replace with your actual URI)
-    MONGODB_URI = os.environ.get("MONGO_DB_URI")
+    MONGODB_URI = os.environ.get("MONGODB_URI")
     if 'history_manager' not in st.session_state:
         st.session_state.history_manager = LFTHistoryManager(MONGODB_URI)
 
