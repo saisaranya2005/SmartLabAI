@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+python-dotenv
+langchain
+langchain-groq
+reportlab
+pymongo
+certifi
+plotly
