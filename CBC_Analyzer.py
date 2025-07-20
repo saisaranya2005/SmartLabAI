@@ -299,7 +299,7 @@ def ai_assistant_page():
         custom_question = st.text_area("Ask about your CBC results, symptoms, or specific concerns:")
         if st.button("Get Answer") and custom_question:
             try:
-                GROQ_API_KEY = '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'
+                GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
                 groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama3-70b-8192')
                 context_prompt = f"""
 Based on these CBC results: {st.session_state.cbc_results}
