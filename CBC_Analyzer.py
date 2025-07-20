@@ -682,7 +682,7 @@ def main():
     current_page = st.session_state.current_page
 
     # MongoDB URI (replace with your actual URI)
-    MONGODB_URI = "mongodb+srv://saisaranya:12345@historical-cluster.puejkmg.mongodb.net/"
+    MONGODB_URI = os.environ.get("MONGODB_URI")
     if 'history_manager' not in st.session_state:
         st.session_state.history_manager = CBCHistoryManager(MONGODB_URI)
 
