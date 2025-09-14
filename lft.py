@@ -79,7 +79,7 @@ def analyze_value(value, ref_range):
 def generate_comprehensive_analysis(lft_results, patient_gender, patient_age):
     GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
     try:
-        groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama3-70b-8192')
+        groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama-3.1-8b-instant')
         prompt = f"""
 Analyze LFT results for {patient_age}-year-old {patient_gender.lower()} patient. Provide direct, clinical recommendations without conversational language.
 
@@ -291,7 +291,7 @@ def ai_assistant_page():
         if st.button("Get Answer") and custom_question:
             try:
                 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
-                groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama3-70b-8192')
+                groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama-3.1-8b-instant')
                 context_prompt = f"""
 Based on these LFT results: {st.session_state.lft_results}
 Patient: {st.session_state.get('patient_age', 'unknown')} years, {st.session_state.get('patient_gender', 'unknown')}
@@ -767,7 +767,7 @@ def about_page():
     with tech_col1:
         st.markdown("""
         **AI Technology:**
-        • Model: Llama3-70B via Groq API
+        • Model: llama-3.1-8b-instant via Groq API
         • Analysis: Evidence-based recommendations
         • Accuracy: Clinical-grade interpretations
 
@@ -864,3 +864,4 @@ def about_page():
 
 if __name__ == "__main__":
     main()
+
