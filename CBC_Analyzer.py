@@ -82,7 +82,7 @@ def analyze_value(value, ref_range):
 def generate_comprehensive_analysis(cbc_results, patient_gender, patient_age):
     GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
     try:
-        groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama3-70b-8192')
+        groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama-3.1-8b-instant')
         prompt = f"""
 Analyze CBC results for {patient_age}-year-old {patient_gender.lower()} patient. Provide direct, clinical recommendations without conversational language.
 
@@ -300,7 +300,7 @@ def ai_assistant_page():
         if st.button("Get Answer") and custom_question:
             try:
                 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
-                groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama3-70b-8192')
+                groq_chat = ChatGroq(groq_api_key=GROQ_API_KEY, model_name='llama-3.1-8b-instant')
                 context_prompt = f"""
 Based on these CBC results: {st.session_state.cbc_results}
 Patient: {st.session_state.get('patient_age', 'unknown')} years, {st.session_state.get('patient_gender', 'unknown')}
@@ -880,3 +880,4 @@ def about_page():
 
 if __name__ == "__main__":
     main()
+
