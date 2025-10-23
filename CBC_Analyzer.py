@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import re
 import random
+from langchain.chains.conversation.base import ConversationChain
 from langchain_core.chains import ConversationChain
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferWindowMemory
@@ -881,5 +882,6 @@ def about_page():
 
 if __name__ == "__main__":
     main()
+
 
 
