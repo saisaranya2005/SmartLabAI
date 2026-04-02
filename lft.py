@@ -202,7 +202,7 @@ def lft_analyzer_page():
                     elif val == "NORMAL":
                         return 'background-color: #e8f5e8'
                     return ''
-                styled_df = df.style.applymap(color_status, subset=['Status'])
+                styled_df = df.style.map(color_status, subset=['Status'])
                 st.dataframe(styled_df, use_container_width=True)
                 normal_count = sum(1 for r in results if r["Status"] == "NORMAL")
                 abnormal_count = len(results) - normal_count
