@@ -281,7 +281,7 @@
             </div>
 
             <div class="app-card">
-    <div class="status-badge live">● LIVE</div>
+    <div class="status-badge live">● Not Yet Live</div>
     <div class="app-icon brain-icon">🧠</div>
     <h2 class="app-title">Alzheimer's Disease Screening</h2>
     <p class="app-description">
@@ -303,7 +303,7 @@
     </div>
 
     <script>
-        // Add some interactive animations
+
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.app-card');
             
@@ -317,8 +317,7 @@
                     card.style.transform = 'translateY(0)';
                 }, index * 200);
             });
-
-            // Add click tracking for analytics (you can replace this with actual analytics)
+            
             const buttons = document.querySelectorAll('.app-button');
             buttons.forEach(button => {
                 if (!button.disabled) {
